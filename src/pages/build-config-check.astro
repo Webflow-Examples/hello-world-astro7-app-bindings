@@ -1,0 +1,21 @@
+---
+// Prerendered probe for the framework-regression harness (CLOUD-952).
+//
+// This page exists only to make the user's `build.format: 'file'` observable in
+// the build output. Because it is prerendered, Astro writes it using the
+// configured build.format: `build-config-check.html` when the option survives,
+// or `build-config-check/index.html` if a builder clobbered the build block and
+// fell back to the 'directory' default. The harness asserts on the flat file.
+export const prerender = true;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>build config check</title>
+  </head>
+  <body>
+    <p>build.format preserved</p>
+  </body>
+</html>
